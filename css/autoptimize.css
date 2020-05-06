@@ -6560,7 +6560,7 @@ i.iconfont.down {
 }
 
 #pagination .loading {
-    background: url("<%= theme.cdn %>/images/wordpress-rotating-ball-o.svg");
+    background: url("<%= theme.cdn %>/images/other/wordpress-rotating-ball-o.svg");
     background-position: center;
     background-repeat: no-repeat;
     color: #555;
@@ -7507,7 +7507,7 @@ i.iconfont.down {
 .oshimai {
     height: 2em;
     width: 6.11em;
-    background: url("<%= theme.cdn %>/images/oshimai.svg");
+    background: url("<%= theme.cdn %>/images/elements/oshimai.svg");
     background-size: cover;
     margin: 0 auto
 }
