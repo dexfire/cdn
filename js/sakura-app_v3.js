@@ -58,13 +58,13 @@ function removeCookie(name) {
 function imgError(ele, type) {
     switch (type) {
         case 1:
-            ele.src = '<%= theme.cdn %>/images/other/Transparent_Akkarin.th.jpg';
+            ele.src = 'https://cdn.jsdelivr.net/gh/dexfire/cdn@v1.0/images/other/Transparent_Akkarin.th.jpg';
             break;
         case 2:
             ele.src = 'https://q2.qlogo.cn/headimg_dl?dst_uin=275176629&spec=5';
             break;
         default:
-            ele.src = '<%= theme.cdn %>/images/other/image-404.png';
+            ele.src = 'https://cdn.jsdelivr.net/gh/dexfire/cdn@v1.0/images/other/image-404.png';
     }
 }
 
