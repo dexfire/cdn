@@ -1,3 +1,4 @@
+// WebPack...?
 try {
     (function webpackUniversalModuleDefinition(b, a) {
         if (typeof exports === "object" && typeof module === "object") {
@@ -207,6 +208,8 @@ try {
         ])
     });
 } catch (e) {}
+
+// 主题服务函数
 try {
     mashiro_global.variables = new function() {
         this.has_bot_ui = false;
@@ -373,29 +376,9 @@ try {
             }, 1000);
         }
     }
-    function imgError(ele, type) {
-        switch (type) {
-        case 1:
-            if (ele.src.includes("https://cn.gravatar.com/avatar")) {
-                ele.src = ele.src.replace("https://cn.gravatar.com/avatar/", "https://cdn.v2ex.com/gravatar/");
-            } else {
-                ele.src = 'https://cdn.jsdelivr.net/gh/dexfire/cdn@v1.0/images/other/Transparent_Akkarin.th.jpg';
-            }
-            break;
-        case 2:
-            ele.src = 'https://gravatar.shino.cc/avatar/?s=80&d=mm&r=g';
-            break;
-        case 3:
-            if (ele.src.includes("https://static.2heng.xin/")) {
-                ele.src = ele.src.replace("https://static.2heng.xin/wp-content/uploads/", "https://cdn.2heng.xin/");
-            } else {
-                ele.src = 'https://cdn.jsdelivr.net/gh/dexfire/cdn@v1.0/images/other/image-404.png';
-            }
-            break;
-        default:
-            ele.src = 'https://cdn.jsdelivr.net/gh/dexfire/cdn@v1.0/images/other/image-404.png';
-        }
-    }
+
+
+
     mashiro_global.post_list_show_animation = new function() {
         this.ini = function(ajax) {
             $("article.post-list-thumb").each(function(i) {
@@ -653,9 +636,11 @@ try {
             return false;
         }
     }
+
     if (document.body.clientWidth > 860) {
         checkBgImgCookie();
     }
+    
     function no_right_click() {
         $('.post-thumb img').bind('contextmenu', function(e) {
             return false;
@@ -1290,6 +1275,7 @@ try {
             setCookie('user_author', user_name, 30);
         });
     }
+    // 获取头像
     function get_gravatar_cn(email, size) {
         var MD5 = function(s) {
             function L(k, d) {
@@ -1498,6 +1484,7 @@ try {
         var size = size || 80;
         return 'https://gravatar.2heng.xin/avatar/' + MD5(email) + '.jpg?s=' + size + '&d=mm';
     }
+    // 获取诗句
     function get_poem(poem_ele, info_ele) {
         var poem = document.querySelector(poem_ele);
         var info = document.querySelector(info_ele);
@@ -1806,7 +1793,7 @@ try {
                     success: function(data) {
                         result = $(data).find("#main .post");
                         nextHref = $(data).find("#pagination a").attr("href");
-                        $("#main").append(result.fadeIn(500));
+                        $("#content").append(result.fadeIn(500));
                         $("#pagination a").removeClass("loading").text("Previous");
                         lazyload();
                         mashiro_global.post_list_show_animation.ini(50);
