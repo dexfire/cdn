@@ -254,7 +254,7 @@ try {
                 if (navigator.userAgent.indexOf('AppleWebKit') != -1) {
                     $("body").addClass("isWebKit");
                 }
-            }();
+            });
             hearthstone_deck_iframe();
             coverVideoIni();
         }
